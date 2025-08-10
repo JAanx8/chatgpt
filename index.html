@@ -1,16 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Click Alert</title>
-  <script>
-    document.addEventListener('click', function() {
-      alert('You are hacked!!');
-    });
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChatGPT Dark Theme</title>
+<style>
+  /* Dark theme base */
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #343541; /* ChatGPT dark background */
+    color: #d1d5db;      /* light gray text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: #444654;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+    user-select: none;
+  }
+
+  main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chat-container {
+    background: #202123;
+    border-radius: 10px;
+    width: 600px;
+    min-height: 300px;
+    box-shadow: 0 0 10px #222;
+    padding: 1rem 1.5rem;
+  }
+
+  .chat-container h2 {
+    color: #10a37f; /* ChatGPT green */
+    margin-bottom: 1rem;
+  }
+
+  .chat-container p {
+    color: #ccc;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* subtle hover for fun */
+  body:hover {
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener('click', function() {
+    alert('You are hacked!!');
+  });
+</script>
 </head>
 <body>
-  <h1>Welcome to ChatGPT</h1>
-  <p>Click anywhere on this page.</p>
+  <header>ChatGPT</header>
+  <main>
+    <div class="chat-container">
+      <h2>Welcome to ChatGPT</h2>
+      <p>Click anywhere on this page to see what happens...</p>
+    </div>
+  </main>
 </body>
 </html>

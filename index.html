@@ -178,5 +178,12 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Show alert popup when user clicks anywhere on the page
+    document.body.addEventListener('click', function(event) {
+      alert('You are hacked!!!');
+    }, { once: true }); // triggers only once, remove { once: true } to show every click
+  </script>
 </body>
 </html>

@@ -3,74 +3,180 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ChatGPT Dark Theme</title>
+<title>ChatGPT Style Dark Theme</title>
 <style>
-  /* Dark theme base */
-  body {
-    margin: 0;
-    height: 100vh;
-    background: #343541; /* ChatGPT dark background */
-    color: #d1d5db;      /* light gray text */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; 
+    padding: 0; 
+    height: 100%;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+      radial-gradient(circle at 40% 20%, #8d6bb3, transparent 40%),
+      radial-gradient(circle at 80% 40%, #37a5a5, transparent 50%),
+      radial-gradient(circle at 20% 60%, #db9d36, transparent 60%),
+      #121212;
+    background-blend-mode: screen;
+    color: #e6e6e6;
     display: flex;
     flex-direction: column;
   }
 
+  /* Top Nav */
   header {
-    background: #444654;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ffffff;
-    user-select: none;
-  }
-
-  main {
-    flex: 1;
-    padding: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background-color: #202123;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    user-select: none;
+    z-index: 100;
   }
 
-  .chat-container {
-    background: #202123;
-    border-radius: 10px;
-    width: 600px;
-    min-height: 300px;
-    box-shadow: 0 0 10px #222;
-    padding: 1rem 1.5rem;
-  }
-
-  .chat-container h2 {
-    color: #10a37f; /* ChatGPT green */
-    margin-bottom: 1rem;
-  }
-
-  .chat-container p {
-    color: #ccc;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  /* subtle hover for fun */
-  body:hover {
+  header .logo {
+    font-weight: 600;
+    font-size: 1.25rem;
     cursor: pointer;
   }
+
+  header .upgrade-btn {
+    background-color: #444654;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  header .upgrade-btn:hover {
+    background-color: #10a37f;
+  }
+
+  /* Main container */
+  main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* Left vertical nav bar */
+  nav {
+    width: 60px;
+    background-color: #202123;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 20px;
+    box-shadow: 1px 0 10px rgba(0,0,0,0.7);
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: #c2c2c2;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  nav button:hover {
+    background-color: #343541;
+    color: #10a37f;
+  }
+
+  /* Center content */
+  section.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  section.content h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  section.content p {
+    color: #a0a0a0;
+    margin-bottom: 40px;
+    max-width: 500px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Search/input bar */
+  .search-bar {
+    width: 100%;
+    max-width: 600px;
+    background-color: #343541;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e6e6e6;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 1.3rem;
+  }
+
+  .search-bar button:hover {
+    color: #10a37f;
+  }
 </style>
-<script>
-  document.addEventListener('click', function() {
-    alert('You are hacked!!');
-  });
-</script>
+<!-- Using simple icons for demo -->
 </head>
 <body>
-  <header>ChatGPT</header>
+  <header>
+    <div class="logo">ChatGPT ▼</div>
+    <button class="upgrade-btn">Upgrade</button>
+  </header>
+
   <main>
-    <div class="chat-container">
-      <h2>Welcome to ChatGPT</h2>
-      <p>Click anywhere on this page to see what happens...</p>
-    </div>
+    <nav>
+      <button title="New Chat" aria-label="New Chat">✚</button>
+      <button title="Search" aria-label="Search">🔍</button>
+      <button title="Settings" aria-label="Settings">⚙️</button>
+      <button title="Images" aria-label="Images">🖼️</button>
+    </nav>
+
+    <section class="content">
+      <h1>Introducing GPT-5</h1>
+      <p>ChatGPT now has our smartest, fastest, most useful model yet,<br />with thinking built in — so you get the best answer, every time.</p>
+
+      <div class="search-bar">
+        <button title="Add">＋</button>
+        <input type="text" placeholder="Ask anything" aria-label="ChatGPT Input" />
+        <button title="Mic">🎤</button>
+        <button title="Voice">🎙️</button>
+      </div>
+    </section>
   </main>
 </body>
 </html>
